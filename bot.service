@@ -1,0 +1,15 @@
+[Unit]
+Description=SOP Trading Bot v2.8
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/sop-v2.8
+EnvironmentFile=-/root/sop-v2.8/.env
+ExecStart=/usr/bin/python3 /root/sop-v2.8/main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
