@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+apt update -y
+apt install python3 python3-pip -y
+pip3 install -r requirements.txt
+mkdir -p data/logs
+if [ ! -f .env ]; then
+    cp .env.example .env
+    echo "请编辑 .env 文件填写 API 密钥"
+fi
