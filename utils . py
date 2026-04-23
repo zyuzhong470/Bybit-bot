@@ -1,0 +1,9 @@
+import time
+
+def sleep_until_next_interval(interval_minutes):
+    now = time.time()
+    interval_sec = interval_minutes * 60
+    next_time = ((now // interval_sec) + 1) * interval_sec
+    sleep_sec = next_time - now
+    if sleep_sec > 0:
+        time.sleep(sleep_sec)
